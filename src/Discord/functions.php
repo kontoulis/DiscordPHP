@@ -277,9 +277,12 @@ function escapeMarkdown(string $text): string
 function deferFind($array, callable $callback, $loop, ?callable $canceller = null): ExtendedPromiseInterface
 {
     $cancelled = false;
-    $canceller ??= function () use (&$cancelled) {
-        $cancelled = true;
-    };
+    if (! $canceller) {
+        $canceller = function () use (&$cancelled) {
+            $cancelled = true;
+        };
+    }
+
     $deferred = new Deferred($canceller);
     $iterator = new ArrayIterator($array);
 
