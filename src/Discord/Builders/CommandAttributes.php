@@ -108,7 +108,7 @@ trait CommandAttributes
             }
         }
 
-        $this->name_localizations ??= [];
+        $this->name_localizations = isset($this->name_localizations) ? $this->name_localizations : [];
 
         $this->name_localizations[$locale] = $name;
 
@@ -154,7 +154,7 @@ trait CommandAttributes
             throw new \LengthException('Command description must be less than or equal to 100 characters.');
         }
 
-        $this->description_localizations ??= [];
+        $this->description_localizations = isset($this->description_localizations) ? $this->description_localizations : [];
 
         $this->description_localizations[$locale] = $description;
 
@@ -225,7 +225,7 @@ trait CommandAttributes
             throw new \OverflowException('Command can only have a maximum of 25 options.');
         }
 
-        $this->options ??= [];
+        $this->options = isset($this->options) ? $this->options : [];
 
         $this->options[] = $option;
 

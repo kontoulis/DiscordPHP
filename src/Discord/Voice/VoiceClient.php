@@ -1248,6 +1248,8 @@ class VoiceClient extends EventEmitter
                 return $this->recieveStreams[$status->ssrc];
             }
         }
+        
+        return null;
     }
 
     /**

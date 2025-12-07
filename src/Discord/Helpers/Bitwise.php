@@ -16,7 +16,7 @@ namespace Discord\Helpers;
  */
 class Bitwise
 {
-    private static bool $is_32_gmp = false;
+    private static $is_32_gmp = false;
 
     /**
      * Run a single check whether the GMP extension is loaded.

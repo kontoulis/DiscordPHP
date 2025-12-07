@@ -204,6 +204,8 @@ class Channel extends Part
         if ($this->recipient) {
             return $this->recipient->id;
         }
+        
+        return null;
     }
 
     /**
